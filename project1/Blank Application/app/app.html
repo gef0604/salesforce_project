@@ -1,0 +1,31 @@
+<template>
+        <lightning-card title="Account List" icon-name="custom:custom14">
+      
+         <table>
+        <tr>
+            <th>Account Name</th>
+            <th>Account Industry</th>
+            <th>Account Sector</th>
+            <th>Account Phone</th>
+        </tr>    
+            <template for:each={accs} for:item="acc">
+            <tr key={acc.id}>
+            <td>{acc.Name}</td>
+            <td>{acc.Industry}</td>
+            <td>{acc.Sector}</td>
+            <td>{acc.Phone}</td> 
+            </tr> 
+            </template>
+         </table>
+          </lightning-card>
+    
+    
+    <div onkeypress={handleKeyPress}>
+    <lightning-input name="newName" label="Account Name" value={newName} onchange={handleChange} ></lightning-input>
+    <lightning-input name="newIndustry" label="Account Industry" value={newIndustry} onchange={handleChange} ></lightning-input>
+    <lightning-input name="newSector" label="Account Sector" value={newSector} onchange={handleChange}></lightning-input>
+    <lightning-input name="newPhone" label="Account Phone" value={newPhone} onchange={handleChange}></lightning-input>
+    </div>
+    
+
+</template>
